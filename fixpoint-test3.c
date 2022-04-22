@@ -2,10 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <limits.h>
-#define L 34
-#define N 2
-#define m 2
-#define t 3
+int L, N, m, t;
 struct monitor_log {
     char date[20];
     char   ip[20];
@@ -194,9 +191,10 @@ void overload_period(struct server_log *u) {
 }
 int main(void){
     int i, j, k;
-    char str[L][100];
     struct monitor_log *l;
     struct server_log *u, *v;
+    scanf("%d %d %d %d", &L, &N, &m, &t);
+    char str[L][100];
     for(i=0;i<L;i++) scanf("%s", str[i]);
     u = (struct server_log*)malloc(sizeof(struct server_log));
     reset_char(20,u->ip);
