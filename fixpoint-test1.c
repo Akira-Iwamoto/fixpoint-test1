@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#define L 34
+int L, N, m, t;
 struct monitor_log {
     char date[20];
     char   ip[20];
@@ -112,9 +112,10 @@ void failure_period(struct server_log *u) {
 }
 int main(void){
     int i, j, k;
-    char str[L][100];
     struct monitor_log *l;
     struct server_log *u, *v;
+    scanf("%d %d %d %d", &L, &N, &m, &t);
+    char str[L][100];
     u = (struct server_log*)malloc(sizeof(struct server_log));
     reset_char(20,u->ip);
     u->next = NULL;
